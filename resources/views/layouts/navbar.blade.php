@@ -1,8 +1,8 @@
-<nav x-data="{ isOpen: false }" class="relative bg-white shadow">
+<nav x-data="{ isOpen: false }" class="fixed w-full bg-white shadow">
     <div class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div class="flex items-center justify-between">
             <a href="#">
-                <h1 class="text-md">NutriPick</h1>
+                <x-application-logo />
             </a>
 
             <!-- Mobile menu button -->

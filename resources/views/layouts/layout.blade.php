@@ -16,13 +16,13 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=lobster:400|nunito-sans:400,500,600,700,800,900" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=almendra-sc:400|nunito:400,500,600,700,800" rel="stylesheet" />
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-nunito antialiased">
     <div class="min-h-screen bg-gray-50">
         @include('layouts.navbar')
         <!-- Page Heading -->
