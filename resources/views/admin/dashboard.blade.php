@@ -1,17 +1,19 @@
 <x-dashboard-layout>
+    {{-- HEADER --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Home') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+    {{-- Content --}}
+    <div class="py-8">
+        <div class="mx-6 sm:px-6 lg:px-8 lg:py-4 bg-white">
+            <h1 class="text-4xl mb-4">Halo, Selamat Datang {{ Auth::user()->name }}</h1>
+            <p class="text-lg">Karena setiap tubuh punya kebutuhan yang berbeda, sistem kami hadir untuk bantu Anda makan
+                dengan
+                lebih bijak.
+            </p>
         </div>
     </div>
 </x-dashboard-layout>
