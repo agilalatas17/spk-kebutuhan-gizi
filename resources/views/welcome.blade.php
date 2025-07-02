@@ -4,7 +4,7 @@
         <div class="flex pt-28 lg:pt-40 justify-center w-full h-full">
             <div class="text-center px-4 lg:w-1/2">
                 <h1 class="text-xl font-medium lg:text-4xl mb-2 lg:mb-4">Selamat datang di <span
-                        class="text-green-600 font-almendra">NutriPick</span>
+                        class="text-violet-500 font-bold font-almendra">NutriPick</span>
                 </h1>
                 <p class="text-sm lg:text-lg text-pretty">Sistem rekomendasi makanan sehat berbasis kebutuhan gizi kamu!
                     Dengan teknologi Simple
