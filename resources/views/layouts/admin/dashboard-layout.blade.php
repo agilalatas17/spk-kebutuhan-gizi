@@ -17,20 +17,18 @@
 </head>
 
 <body class="font-nunito antialiased">
-    <div class="min-h-screen bg-gray-100">
-        @include('layouts.admin.navigation')
-
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
+    <div class="min-h-screen bg-gray-100 flex">
+        @include('layouts.admin.sidebar')
 
         <!-- Page Content -->
-        <main>
+        <main class="flex-1">
+            @if (isset($header))
+                <header class="bg-white shadow-">
+                    <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
             {{ $slot }}
         </main>
     </div>
