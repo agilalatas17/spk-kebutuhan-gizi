@@ -1,0 +1,67 @@
+<x-dashboard-layout>
+    {{-- HEADER --}}
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Data Users') }}
+        </h2>
+    </x-slot>
+
+    {{-- CONTENT --}}
+    <section>
+        <table class="divid border border-red-400 w-2/4 rounded-lg">
+            <thead class="border bg-violet-200">
+                <tr>
+                    <th scope="col"
+                        class="px-4 py-2 w-6 text-base font-semibold font-nunito text-left text-black border border-gray-200">
+                        No
+                    </th>
+
+                    <th scope="col"
+                        class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
+                        Nama
+                    </th>
+
+                    <th scope="col"
+                        class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
+                        Usia
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
+                        1
+                    </td>
+                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
+                        HANABI KAKA
+                    </td>
+                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
+                        33
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
+                        2
+                    </td>
+                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
+                        UDIN
+                    </td>
+                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
+                        24
+                    </td>
+                </tr>
+                <tr>
+                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
+                        3
+                    </td>
+                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
+                        ADIM SARIDIM
+                    </td>
+                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
+                        23
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</x-dashboard-layout>
