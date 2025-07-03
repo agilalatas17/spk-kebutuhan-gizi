@@ -29,7 +29,10 @@
                     </div>
                 </header>
             @endif
-            {{ $slot }}
+
+            <div class="lg:m-6 lg:p-6 rounded-md bg-white">
+                {{ $slot }}
+            </div>
         </main>
     </div>
 </body>
