@@ -30,7 +30,7 @@
                 </header>
             @endif
 
-            <div class="lg:m-6 lg:p-6 rounded-md bg-white">
+            <div>
                 {{ $slot }}
             </div>
         </main>

@@ -7,8 +7,8 @@
     </x-slot>
 
     {{-- CONTENT --}}
-    <section>
-        <table class="divid border border-red-400 w-2/4 rounded-lg">
+    <section class="w-2/4 lg:m-6 lg:p-6 rounded-md bg-white">
+        <table class="divid border table-auto w-full rounded-lg">
             <thead class="border bg-violet-200">
                 <tr>
                     <th scope="col"
