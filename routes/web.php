@@ -16,16 +16,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('admin.dashboard');
+})->middleware(['auth', 'verified'])->name('admin.dashboard');
+
+Route::get('/data-user', function () {
+    return view('admin.data-user');
+})->middleware(['auth', 'verified'])->name('admin.data-user');
+
+Route::get('/kriteria', function () {
+    return view('admin.kriteria');
+})->middleware(['auth', 'verified'])->name('admin.kriteria');
+
+Route::get('/sub-kriteria', function () {
+    return view('admin.sub-kriteria');
+})->middleware(['auth', 'verified'])->name('admin.sub-kriteria');
+
+Route::get('/hasil', function () {
+    return view('admin.hasil');
+})->middleware(['auth', 'verified'])->name('admin.hasil');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 });
 
 require __DIR__.'/auth.php';
