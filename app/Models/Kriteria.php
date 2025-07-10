@@ -9,5 +9,6 @@ class Kriteria extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_kriteria';
     protected $fillable = ['nama_kriteria', 'bobot', 'atribut'];
 }
