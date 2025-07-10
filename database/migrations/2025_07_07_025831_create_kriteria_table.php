@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nama_kriteria', 50);
             $table->float('bobot', 20);
             $table->enum('atribut', ['benefit', 'cost']);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
