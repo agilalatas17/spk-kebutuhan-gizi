@@ -18,10 +18,12 @@
 
 <body class="font-nunito antialiased">
     <div class="min-h-screen bg-gray-100 flex">
+
         @include('layouts.admin.sidebar')
 
+
         <!-- Page Content -->
-        <main class="flex-1">
+        <main class="flex-1 overflow-auto">
             @if (isset($header))
                 <header class="bg-white shadow-">
                     <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -30,7 +32,7 @@
                 </header>
             @endif
 
-            <div>
+            <div class="mx-auto p-4">
                 {{ $slot }}
             </div>
         </main>
