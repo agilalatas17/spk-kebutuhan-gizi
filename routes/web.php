@@ -1,18 +1,8 @@
 <?php
 
+use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,13 +16,11 @@ Route::get('/data-user', function () {
     return view('admin.data-user');
 })->middleware(['auth', 'verified'])->name('admin.data-user');
 
-Route::get('/kriteria', function () {
-    return view('admin.kriteria');
-})->middleware(['auth', 'verified'])->name('admin.kriteria');
-
-Route::get('/sub-kriteria', function () {
-    return view('admin.sub-kriteria');
-})->middleware(['auth', 'verified'])->name('admin.sub-kriteria');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/kriteria', [KriteriaController::class, 'index'])->name('admin.kriteria.index');
+    Route::post('/kriteria', [KriteriaController::class, 'store'])->name('admin.kriteria.store');
+    Route::delete('/kriteria/{id}', [KriteriaController::class, 'destroy'])->name('admin.kriteria.destroy');
+});
 
 Route::get('/hasil', function () {
     return view('admin.hasil');
