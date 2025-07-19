@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,12 +13,10 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-Route::get('/data-user', function () {
-    return view('admin.data-user');
-})->middleware(['auth', 'verified'])->name('admin.data-user');
+Route::get('/dashboard/data-user', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.data-user');
 
 Route::middleware(['auth', 'verified'])->group(function() {
-    Route::resource('kriteria', KriteriaController::class)
+    Route::resource('/dashboard/kriteria', KriteriaController::class)
         ->names([
             'index' => 'admin.kriteria.index',
             'create' => 'admin.kriteria.create',
