@@ -16,10 +16,17 @@ Route::get('/data-user', function () {
     return view('admin.data-user');
 })->middleware(['auth', 'verified'])->name('admin.data-user');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/kriteria', [KriteriaController::class, 'index'])->name('admin.kriteria.index');
-    Route::post('/kriteria', [KriteriaController::class, 'store'])->name('admin.kriteria.store');
-    Route::delete('/kriteria/{id}', [KriteriaController::class, 'destroy'])->name('admin.kriteria.destroy');
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::resource('kriteria', KriteriaController::class)
+        ->names([
+            'index' => 'admin.kriteria.index',
+            'create' => 'admin.kriteria.create',
+            'store' => 'admin.kriteria.store',
+            'edit' => 'admin.kriteria.edit',
+            'update' => 'admin.kriteria.update',
+            'destroy' => 'admin.kriteria.destroy',
+        ])
+        ->parameters(['kriteria' => 'id']);
 });
 
 Route::get('/hasil', function () {
