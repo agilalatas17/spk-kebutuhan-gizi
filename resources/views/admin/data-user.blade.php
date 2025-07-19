@@ -23,44 +23,33 @@
 
                     <th scope="col"
                         class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
-                        Usia
+                        Email
                     </th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
-                        1
-                    </td>
-                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
-                        HANABI KAKA
-                    </td>
-                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
-                        33
-                    </td>
-                </tr>
-                <tr>
-                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
-                        2
-                    </td>
-                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
-                        UDIN
-                    </td>
-                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
-                        24
-                    </td>
-                </tr>
-                <tr>
-                    <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
-                        3
-                    </td>
-                    <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
-                        ADIM SARIDIM
-                    </td>
-                    <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
-                        23
-                    </td>
-                </tr>
+                @if (isset($data) && count($data) > 0)
+                    @foreach ($data as $key => $value)
+                        <tr>
+                            <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
+                                {{ $key + 1 }}
+                            </td>
+                            <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
+                                {{ $value->nama }}
+                            </td>
+                            <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
+                                {{ $value->email }}
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr class="outline-gray-200">
+                        <td colspan="3" class="py-8 text-center">
+                            <img src="{{ asset('assets/icons/no-data-table.svg') }}" width="120" class="mx-auto">
+                            <p class="mt-4 text-lg text-gray-400">Data tidak tersedia!</p>
+                        </td>
+                    </tr>
+                @endif
             </tbody>
         </table>
     </section>
