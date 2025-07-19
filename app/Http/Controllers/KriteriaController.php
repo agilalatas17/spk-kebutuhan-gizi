@@ -21,7 +21,7 @@ class KriteriaController extends Controller
     }
 
     public function create() {
-        return view('admin.kriteria.add');
+        return view('admin.kriteria.create');
     }
 
     public function store(Request $request) {
@@ -36,6 +36,31 @@ class KriteriaController extends Controller
 
         Kriteria::create($dataStore);
 
+        return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil ditambahkan!');
+    }
+
+    public function edit($id) {
+        $kriteria = Kriteria::find($id);
+        $data = $kriteria;
+
+        return view('admin.kriteria.edit', ['data' => $data]);
+    }
+
+    public function update(Request $request, $id) {
+        $data = Kriteria::find($id);
+        $dataUpdate = $request->validate([
+            'nama_kriteria' => 'required|string|max:50',
+            'atribut' => 'required',
+            'bobot' => 'required|numeric|min:0|max:100',
+        ]);
+
+        if(isset($dataUpdate['bobot'])) {
+            $dataUpdate['bobot'] = $dataUpdate['bobot'] / 100;
+        }
+        
+        $dataUpdate['user_id'] = auth()->id();
+
+        $data->update($dataUpdate);
         return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil ditambahkan!');
     }
 
