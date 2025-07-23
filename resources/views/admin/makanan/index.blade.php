@@ -60,17 +60,17 @@
                             class="px-4 py-2 text-base text-center font-semibold font-nunito text-black border border-gray-200 whitespace-nowrap">
                             Aksi
                         </th>
-                        {{-- @foreach ($kriteria as $key => $value)
+                        {{-- @foreach ($makanan as $key => $value)
                             <th scope="col"
                                 class="px-4 py-2 text-base text-center font-semibold font-nunito text-black border capitalize border-gray-200 whitespace-nowrap">
-                                {{ $value->nama_kriteria }}
+                                {{ $value->nama_makanan }}
                             </th>
                         @endforeach --}}
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                    @if (isset($kriteria) && count($kriteria) > 0)
-                        @foreach ($kriteria as $key => $value)
+                    @if (isset($makanan) && count($makanan) > 0)
+                        @foreach ($makanan as $key => $value)
                             <tr>
                                 <td
                                     class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
