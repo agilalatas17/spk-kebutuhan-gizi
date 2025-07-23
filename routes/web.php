@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\KriteriaController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MakananController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KriteriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,6 +27,18 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'destroy' => 'admin.kriteria.destroy',
         ])
         ->parameters(['kriteria' => 'id']);
+});
+
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::resource('/dashboard/makanan', MakananController::class)
+        ->names([
+            'index' => 'admin.makanan.index',
+            'create' => 'admin.makanan.create',
+            'store' => 'admin.makanan.store',
+            'edit' => 'admin.makanan.edit',
+            'update' => 'admin.makanan.update',
+            'destroy' => 'admin.makanan.destroy',
+        ]);
 });
 
 Route::get('/hasil', function () {
