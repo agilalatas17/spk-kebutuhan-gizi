@@ -32,7 +32,7 @@
                 </header>
             @endif
 
-            <div class="mx-auto p-4">
+            <div class="mx-auto p-6">
                 {{ $slot }}
             </div>
         </main>

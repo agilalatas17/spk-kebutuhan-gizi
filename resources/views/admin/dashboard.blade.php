@@ -7,7 +7,7 @@
     </x-slot>
 
     {{-- Content --}}
-    <section class="lg:m-6 lg:p-6 rounded-md bg-white">
+    <section class="lg:p-6 rounded-md bg-white">
         <h1 class="text-4xl mb-4">Halo, Selamat Datang {{ Str::ucfirst(Auth::user()->nama) }}</h1>
         <p class="text-lg">Karena setiap tubuh punya kebutuhan yang berbeda, sistem kami hadir untuk bantu Anda makan
             dengan

@@ -7,11 +7,11 @@
     </x-slot>
 
     {{-- CONTENT --}}
-    <section class="w-3/5 lg:m-6 lg:p-6 rounded-md bg-white">
+    <section class="w-3/5 lg:p-6 rounded-md bg-white">
         <div class="flex justify-end mb-4">
             <a href="{{ route('admin.kriteria.create') }}"
                 class="px-4 py-2 font-semibold text-white transition-colors duration-300 transform !w-fit capitalize rounded bg-violet-500 hover:bg-violet-400">
-                Add Data
+                Tambah Data
             </a>
         </div>
 
