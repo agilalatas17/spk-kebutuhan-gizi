@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\PenilaianController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,11 +26,8 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'edit' => 'admin.kriteria.edit',
             'update' => 'admin.kriteria.update',
             'destroy' => 'admin.kriteria.destroy',
-        ])
-        ->parameters(['kriteria' => 'id']);
-});
+    ])->parameters(['kriteria' => 'id'])->except(['shows']);
 
-Route::middleware(['auth', 'verified'])->group(function() {
     Route::resource('/dashboard/makanan', MakananController::class)
         ->names([
             'index' => 'admin.makanan.index',
@@ -38,7 +36,13 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'edit' => 'admin.makanan.edit',
             'update' => 'admin.makanan.update',
             'destroy' => 'admin.makanan.destroy',
-        ]);
+    ])->except(['show']);
+
+    Route::resource('/dashboard/penilaian', PenilaianController::class)
+        ->names([
+            'index' => 'admin.penilaian.index',
+            'store' => 'admin.penilaian.store',
+    ])->except(['destroy', 'update', 'show', 'edit', 'create']);
 });
 
 Route::get('/hasil', function () {
