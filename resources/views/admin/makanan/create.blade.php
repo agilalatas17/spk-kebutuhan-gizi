@@ -22,7 +22,7 @@
                 <p class="font-semibold mb-1">Kalori</p>
                 <select name="kalori" id="kalori"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang kalori</option>
+                    <option value="">Pilih rentang kalori</option>
                     <option value=">450 kcal">&gt;450 kcal</option>
                     <option value="351-450 kcal">351-450 kcal</option>
                     <option value="251-351 kcal">251-351 kcal</option>
@@ -35,7 +35,7 @@
                 <p class="font-semibold mb-1">Protein</p>
                 <select name="protein" id="protein"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang protein</option>
+                    <option value="">Pilih rentang protein</option>
                     <option value="<5 gr">&lt;5 gr</option>
                     <option value="5-9 gr">5-9 gr</option>
                     <option value="10-14 gr">10-14 gr</option>
@@ -48,7 +48,7 @@
                 <p class="font-semibold mb-1">Lemak Sehat</p>
                 <select name="lemak_sehat" id="lemak_sehat"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang lemak sehat</option>
+                    <option value="">Pilih rentang lemak sehat</option>
                     <option value="<2 gr">&lt;2 gr</option>
                     <option value="2-3 gr">2-3 gr</option>
                     <option value="4-5 gr">4-5 gr</option>
@@ -61,7 +61,7 @@
                 <p class="font-semibold mb-1">Serat</p>
                 <select name="serat" id="serat"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang serat</option>
+                    <option value="">Pilih rentang serat</option>
                     <option value="<2 gr">&lt;2 gr</option>
                     <option value="2-3 gr">2-3 gr</option>
                     <option value="4-5 gr">4-5 gr</option>
@@ -74,7 +74,7 @@
                 <p class="font-semibold mb-1">Vitamin & Mineral</p>
                 <select name="vitamin_mineral" id="vitamin_mineral"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang vitamin dan mineral</option>
+                    <option value="">Pilih rentang vitamin dan mineral</option>
                     <option value="<20%">&lt;20%</option>
                     <option value="20-39%">20-39%</option>
                     <option value="40-59%">40-59%</option>
@@ -87,7 +87,7 @@
                 <p class="font-semibold mb-1">Index Glikemik</p>
                 <select name="index_glikemik" id="index_glikemik"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang index glikemik</option>
+                    <option value="">Pilih rentang index glikemik</option>
                     <option value=">80">&gt;80</option>
                     <option value="70-80">70-80</option>
                     <option value="56-69">56-69</option>
@@ -100,7 +100,7 @@
                 <p class="font-semibold mb-1">Usia</p>
                 <select name="usia" id="usia"
                     class="form-select block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
-                    <option selected>Pilih rentang usia</option>
+                    <option value="">Pilih rentang usia</option>
                     <option value="1">&gt;70 tahun</option>
                     <option value="61-70 tahun">61-70 tahun</option>
                     <option value="46-60 tahun">46-60 tahun</option>
