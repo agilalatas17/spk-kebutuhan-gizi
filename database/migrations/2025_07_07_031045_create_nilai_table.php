@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('id_makanan');
             $table->unsignedBigInteger('id_kriteria');
-            $table->float('nilai_bobot', 8);
-            $table->foreign('id_makanan')->references('id')->on('tb_makanan')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('id_kriteria')->references('id')->on('tb_kriteria')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('nilai');
+            $table->foreign('id_makanan')->references('id')->on('tb_makanan')->onDelete('cascade');
+            $table->foreign('id_kriteria')->references('id')->on('tb_kriteria')->onDelete('cascade');
             $table->timestamps();
         });
     }

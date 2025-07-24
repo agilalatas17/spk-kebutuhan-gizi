@@ -7,11 +7,11 @@
     </x-slot>
 
     {{-- CONTENT --}}
-    <section class="w-3/5 lg:m-6 lg:p-6 rounded-md bg-white">
+    <section class="w-3/5 lg:p-6 rounded-md bg-white">
         <div class="flex justify-end mb-4">
             <a href="{{ route('admin.kriteria.create') }}"
                 class="px-4 py-2 font-semibold text-white transition-colors duration-300 transform !w-fit capitalize rounded bg-violet-500 hover:bg-violet-400">
-                Add Data
+                Tambah Data
             </a>
         </div>
 
@@ -43,39 +43,50 @@
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                @foreach ($data as $key => $value)
-                    <tr>
-                        <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
-                            {{ $key + 1 }}
-                        </td>
-                        <td class="px-4 py-4 text-sm font-medium capitalize whitespace-nowrap border border-gray-200">
-                            {{ $value->nama_kriteria }}
-                        </td>
-                        <td class="px-4 py-4 text-sm text-center capitalize whitespace-nowrap border border-gray-200">
-                            {{ $value->atribut }}
-                        </td>
-                        <td class="px-4 py-4 text-sm text-center whitespace-nowrap border border-gray-200">
-                            {{ $value->bobot }} %
-                        </td>
-                        <td
-                            class="flex gap-x-2 justify-center px-4 py-4 text-sm text-center whitespace-nowrap border border-gray-200">
-                            <a href="{{ route('admin.kriteria.edit', $value->id) }}"
-                                class="px-6 py-2 font-semibold rounded-lg text-white transition-colors duration-300 transform !w-fit !bg-yellow-500 hover:!bg-yellow-400 capitalize">
-                                Edit
-                            </a>
-                            <form method="POST" action="{{ route('admin.kriteria.destroy', $value->id) }}"
-                                onsubmit="return confirm('Yakin ingin menghapus data ?')">
-                                @csrf
-                                @method('delete')
+                @if (isset($data) && count($data) > 0)
+                    @foreach ($data as $key => $value)
+                        <tr>
+                            <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
+                                {{ $key + 1 }}
+                            </td>
+                            <td
+                                class="px-4 py-4 text-sm font-medium capitalize whitespace-nowrap border border-gray-200">
+                                {{ $value->nama_kriteria }}
+                            </td>
+                            <td
+                                class="px-4 py-4 text-sm text-center capitalize whitespace-nowrap border border-gray-200">
+                                {{ $value->atribut }}
+                            </td>
+                            <td class="px-4 py-4 text-sm text-center whitespace-nowrap border border-gray-200">
+                                {{ $value->bobot }} %
+                            </td>
+                            <td
+                                class="flex gap-x-2 justify-center px-4 py-4 text-sm text-center whitespace-nowrap border border-gray-200">
+                                <a href="{{ route('admin.kriteria.edit', $value->id) }}"
+                                    class="px-6 py-2 font-semibold rounded-lg text-white transition-colors duration-300 transform !w-fit !bg-yellow-500 hover:!bg-yellow-400 capitalize">
+                                    Edit
+                                </a>
+                                <form method="POST" action="{{ route('admin.kriteria.destroy', $value->id) }}"
+                                    onsubmit="return confirm('Yakin ingin menghapus data ?')">
+                                    @csrf
+                                    @method('delete')
 
-                                <x-primary-button type="submit"
-                                    class="!w-fit !bg-red-500 hover:!bg-red-400 capitalize">
-                                    Delete
-                                </x-primary-button>
-                            </form>
+                                    <x-primary-button type="submit"
+                                        class="!w-fit !bg-red-500 hover:!bg-red-400 capitalize">
+                                        Delete
+                                    </x-primary-button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                @else
+                    <tr class="outline-gray-200">
+                        <td colspan="5" class="py-8 text-center">
+                            <img src="{{ asset('assets/icons/no-data-table.svg') }}" width="120" class="mx-auto">
+                            <p class="mt-4 text-lg text-gray-400">Data tidak tersedia!</p>
                         </td>
                     </tr>
-                @endforeach
+                @endif
             </tbody>
         </table>
     </section>

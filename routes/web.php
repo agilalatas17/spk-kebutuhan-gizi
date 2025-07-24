@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\KriteriaController;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MakananController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\KriteriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,12 +14,10 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-Route::get('/data-user', function () {
-    return view('admin.data-user');
-})->middleware(['auth', 'verified'])->name('admin.data-user');
+Route::get('/dashboard/data-user', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.data-user');
 
 Route::middleware(['auth', 'verified'])->group(function() {
-    Route::resource('kriteria', KriteriaController::class)
+    Route::resource('/dashboard/kriteria', KriteriaController::class)
         ->names([
             'index' => 'admin.kriteria.index',
             'create' => 'admin.kriteria.create',
@@ -27,6 +27,18 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'destroy' => 'admin.kriteria.destroy',
         ])
         ->parameters(['kriteria' => 'id']);
+});
+
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::resource('/dashboard/makanan', MakananController::class)
+        ->names([
+            'index' => 'admin.makanan.index',
+            'create' => 'admin.makanan.create',
+            'store' => 'admin.makanan.store',
+            'edit' => 'admin.makanan.edit',
+            'update' => 'admin.makanan.update',
+            'destroy' => 'admin.makanan.destroy',
+        ]);
 });
 
 Route::get('/hasil', function () {
