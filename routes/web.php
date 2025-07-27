@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\PenilaianController;
+use App\Http\Controllers\HasilController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,11 +27,8 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'edit' => 'admin.kriteria.edit',
             'update' => 'admin.kriteria.update',
             'destroy' => 'admin.kriteria.destroy',
-        ])
-        ->parameters(['kriteria' => 'id']);
-});
+    ])->parameters(['kriteria' => 'id'])->except(['shows']);
 
-Route::middleware(['auth', 'verified'])->group(function() {
     Route::resource('/dashboard/makanan', MakananController::class)
         ->names([
             'index' => 'admin.makanan.index',
@@ -38,12 +37,19 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'edit' => 'admin.makanan.edit',
             'update' => 'admin.makanan.update',
             'destroy' => 'admin.makanan.destroy',
-        ]);
-});
+    ])->except(['show']);
 
-Route::get('/hasil', function () {
-    return view('admin.hasil');
-})->middleware(['auth', 'verified'])->name('admin.hasil');
+    Route::resource('/dashboard/penilaian', PenilaianController::class)
+        ->names([
+            'index' => 'admin.penilaian.index',
+            'store' => 'admin.penilaian.store',
+    ])->except(['destroy', 'update', 'show', 'edit', 'create']);
+
+    Route::resource('/dashboard/hasil', HasilController::class)
+        ->names([
+            'index' => 'admin.hasil.index',
+    ])->except(['destroy', 'update', 'show', 'edit', 'create', 'store']);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
