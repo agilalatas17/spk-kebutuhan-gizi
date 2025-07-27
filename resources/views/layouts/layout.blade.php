@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="{{ asset('assets/images/logo/pokarez-logo.jpg') }}" type="image/jpg">
 
-    <title>{{ config('app.name', 'POKAREZ WEB') }}</title>
+    <title>{{ config('app.name', 'NUTRIPICK') }}</title>
 
     <!-- Google Site Verification -->
     @if (config('services.google_site_verification'))
