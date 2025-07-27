@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_makanan', 50);
             $table->enum('kalori', ['>450 kcal', '351-450 kcal', '251-351 kcal', '150-250 kcal', '<150 kcal']);
-            $table->enum('protein', ['<5 gr', '5-9 gr', '>10-14 gr', '15-20 gr', '>20 gr']);
+            $table->enum('protein', ['<5 gr', '5-9 gr', '10-14 gr', '15-20 gr', '>20 gr']);
             $table->enum('lemak_sehat', ['<2 gr', '2-3 gr', '4-5 gr', '6-8 gr', '>8 gr']);
             $table->enum('serat', ['<2 gr', '2-3 gr', '4-5 gr', '6-8 gr', '>8 gr']);
             $table->enum('vitamin_mineral', ['<20%', '20-39%', '40-59%', '60-80%', '>80%']);
