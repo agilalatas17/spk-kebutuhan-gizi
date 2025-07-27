@@ -1,22 +1,26 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\HasilController;
+use App\Http\Controllers\KonsultasiController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('/');
 
+// Route::get('/konsultasi-gizi', [KonsultasiController::class, 'index'])->name('konsultasi-gizi');
+Route::match(['get', 'post'], '/konsultasi-gizi', [KonsultasiController::class, 'index'])->name('konsultasi-gizi');
+
 Route::get('/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-Route::get('/dashboard/data-user', [UserController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.data-user');
+Route::get('/dashboard/data-customer', [CustomerController::class, 'show'])->middleware(['auth', 'verified'])->name('admin.data-customer');
 
 Route::middleware(['auth', 'verified'])->group(function() {
     Route::resource('/dashboard/kriteria', KriteriaController::class)

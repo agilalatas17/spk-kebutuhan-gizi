@@ -21,7 +21,7 @@
                 <span class="mx-4 font-medium">Home</span>
             </x-side-nav-link>
 
-            <x-side-nav-link :href="url('/dashboard/data-user')" :active="request()->routeIs('admin.data-user')">
+            <x-side-nav-link :href="url('/dashboard/data-customer')" :active="request()->routeIs('admin.data-customer')">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
@@ -30,7 +30,7 @@
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
 
-                <span class="mx-4 font-medium">Data Users</span>
+                <span class="mx-4 font-medium">Data Customer</span>
             </x-side-nav-link>
 
             <x-side-nav-link :href="url('/dashboard/kriteria')" :active="request()->routeIs('admin.kriteria.index')">
@@ -76,24 +76,4 @@
             </x-side-nav-link>
         </nav>
     </div>
-
-    {{-- <hr class="mt-8 mb-4 border border-gray-300/50"> --}}
-
-    <!-- Authentication -->
-    {{-- <form method="POST" action="{{ route('logout') }}">
-        @csrf
-
-        <x-responsive-nav-link :href="route('logout')"
-            class="flex items-center justify-center bg-red-200 hover:bg-red-50 rounded"
-            onclick="event.preventDefault();
-                            this.closest('form').submit();">
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2" />
-            </svg>
-
-            <span class="mx-4 font-medium">{{ __('Log Out') }}</span>
-        </x-responsive-nav-link>
-    </form> --}}
 </aside>
