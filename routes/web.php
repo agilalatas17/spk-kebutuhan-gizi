@@ -6,6 +6,7 @@ use App\Http\Controllers\MakananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\PenilaianController;
+use App\Http\Controllers\HasilController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,11 +44,12 @@ Route::middleware(['auth', 'verified'])->group(function() {
             'index' => 'admin.penilaian.index',
             'store' => 'admin.penilaian.store',
     ])->except(['destroy', 'update', 'show', 'edit', 'create']);
-});
 
-Route::get('/hasil', function () {
-    return view('admin.hasil');
-})->middleware(['auth', 'verified'])->name('admin.hasil');
+    Route::resource('/dashboard/hasil', HasilController::class)
+        ->names([
+            'index' => 'admin.hasil.index',
+    ])->except(['destroy', 'update', 'show', 'edit', 'create', 'store']);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
