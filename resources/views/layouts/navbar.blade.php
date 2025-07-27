@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="fixed w-full bg-white shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between items-center h-16">
             <div class="flex justify-between w-full">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -11,16 +11,25 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex md">
                     <x-nav-link :href="route('/')" :active="request()->routeIs('/')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('login')" :active="request()->routeIs('/login')">
-                        {{ __('Login') }}
+
+                    <x-nav-link :href="route('konsultasi-gizi')" :active="request()->routeIs('/konsultasi-gizi')">
+                        {{ __('Konsultasi gizi') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('register')" :active="request()->routeIs('/register')">
+
+                    <x-nav-link :href="route('register')" :active="request()->routeIs('/register')"
+                        class="px-4 py-1 border border-violet-500 text-violet-500 hover:text-violet-400 hover:border-violet-400 hover:shadow-sm font-semibold rounded-md transition-colors duration-300 ease-in-out">
                         {{ __('Register') }}
                     </x-nav-link>
+
+                    <x-nav-link :href="route('login')" :active="request()->routeIs('/login')"
+                        class="px-4 py-1 bg-violet-500 text-white hover:text-white hover:border-violet-500 hover:bg-violet-400 transition-colors duration-300 ease-in-out font-semibold rounded-md">
+                        {{ __('Login') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
@@ -46,6 +55,9 @@
             <div class="pt-2 pb-3 space-y-1 bg-white shadow">
                 <x-responsive-nav-link :href="route('/')" :active="request()->routeIs('/')">
                     {{ __('Home') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('konsultasi-gizi')" :active="request()->routeIs('/konsultasi-gizi')">
+                    {{ __('Konsultasi gizi') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('/login')">
                     {{ __('Login') }}

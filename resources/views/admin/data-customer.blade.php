@@ -2,7 +2,7 @@
     {{-- HEADER --}}
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Data Users') }}
+            {{ __('Data Customer') }}
         </h2>
     </x-slot>
 
@@ -15,15 +15,17 @@
                         class="px-4 py-2 w-6 text-base font-semibold font-nunito text-left text-black border border-gray-200">
                         No
                     </th>
-
                     <th scope="col"
                         class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
                         Nama
                     </th>
-
                     <th scope="col"
                         class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
-                        Email
+                        Jenis Kelamin
+                    </th>
+                    <th scope="col"
+                        class="px-4 py-2 text-base font-semibold font-nunito text-left text-black border border-gray-200">
+                        Usia
                     </th>
                 </tr>
             </thead>
@@ -34,11 +36,15 @@
                             <td class="p-4 text-center text-sm font-medium whitespace-nowrap border border-gray-200">
                                 {{ $key + 1 }}
                             </td>
-                            <td class="px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
+                            <td
+                                class="capitalize px-4 py-4 text-sm font-medium whitespace-nowrap border border-gray-200">
                                 {{ $value->nama }}
                             </td>
+                            <td class="capitalize px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
+                                {{ $value->jenis_kelamin }}
+                            </td>
                             <td class="px-4 py-4 text-sm whitespace-nowrap border border-gray-200">
-                                {{ $value->email }}
+                                {{ $value->usia }}
                             </td>
                         </tr>
                     @endforeach
