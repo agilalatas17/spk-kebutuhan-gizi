@@ -77,10 +77,10 @@
         </nav>
     </div>
 
-    <hr class="mt-8 mb-4 border border-gray-300/50">
+    {{-- <hr class="mt-8 mb-4 border border-gray-300/50"> --}}
 
     <!-- Authentication -->
-    <form method="POST" action="{{ route('logout') }}">
+    {{-- <form method="POST" action="{{ route('logout') }}">
         @csrf
 
         <x-responsive-nav-link :href="route('logout')"
@@ -95,5 +95,5 @@
 
             <span class="mx-4 font-medium">{{ __('Log Out') }}</span>
         </x-responsive-nav-link>
-    </form>
+    </form> --}}
 </aside>
