@@ -19,7 +19,7 @@ class PenilaianController extends Controller
     public function store(Request $request) {
         foreach($request->nilai as $makananId => $kriteria) {
             foreach($kriteria as $kriteriaId => $nilai) {
-                $data = Nilai::updateOrCreate(
+                Nilai::updateOrCreate(
                     ['id_makanan' => $makananId, 'id_kriteria' => $kriteriaId],
                     ['nilai' => $nilai]
                 );
